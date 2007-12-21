@@ -10,6 +10,7 @@ URL:		http://www.cirt.net/code/nikto.shtml
 Source:		http://www.cirt.net/nikto/%{name}-%{version}.tar.bz2
 Patch0:		nikto-1.35.mdv_conf.diff
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Nikto is an Open Source (GPL) web server scanner which performs
