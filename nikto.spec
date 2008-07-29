@@ -3,7 +3,7 @@
 Summary:	Nikto  - Web Server and CGI Scanner
 Name:		nikto
 Version:	1.35
-Release:	%mkrel 2
+Release:	%mkrel 4
 License:	GPL
 Group:		Networking/Other
 URL:		http://www.cirt.net/code/nikto.shtml
