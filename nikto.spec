@@ -2,7 +2,7 @@
 
 Summary:	Web Server and CGI Scanner
 Name:		nikto
-Version:	2.1.3
+Version:	2.1.4
 Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Other
