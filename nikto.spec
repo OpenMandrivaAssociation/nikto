@@ -3,7 +3,7 @@
 Summary:	Web Server and CGI Scanner
 Name:		nikto
 Version:	2.1.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Networking/Other
 URL:		http://www.cirt.net/code/nikto.shtml
@@ -34,8 +34,8 @@ rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_bindir}
 install -m0755 nikto.pl %{buildroot}%{_bindir}/nikto
 
-install -d -m 755 %{buildroot}%{_sysconfdir}/nikto
-install -m0644 nikto.conf %{buildroot}%{_sysconfdir}/nikto
+install -d -m 755 %{buildroot}%{_sysconfdir}
+install -m0644 nikto.conf %{buildroot}%{_sysconfdir}
 
 install -d %{buildroot}%{_datadir}/nikto/plugins
 install -m0644 plugins/* %{buildroot}%{_datadir}/nikto/plugins
@@ -51,7 +51,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc docs/CHANGES.txt docs/LICENSE.txt docs/nikto_manual.html docs/nikto.dtd
-%config(noreplace) %{_sysconfdir}/nikto
+%config(noreplace) %{_sysconfdir}/nikto.conf
 %{_datadir}/nikto
 %{_bindir}/nikto
 %{_mandir}/man1/nikto.1*
