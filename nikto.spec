@@ -3,9 +3,9 @@
 Summary:	Web Server and CGI Scanner
 Name:		nikto
 Version:	2.1.4
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
-Group:		Networking/Other
+Group:		Monitoring
 URL:		http://www.cirt.net/code/nikto.shtml
 Source:		http://www.cirt.net/nikto/%{name}-%{version}.tar.bz2
 Patch0:		nikto-2.1.1-fhs.patch
