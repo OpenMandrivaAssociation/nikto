@@ -57,3 +57,55 @@ rm -rf %{buildroot}
 %{_mandir}/man1/nikto.1*
 
 
+
+
+%changelog
+* Thu Jul 07 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.1.4-3mdv2011
++ Revision: 689086
+- switch group to monitoring, as other security-related tools
+
+* Sat May 14 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.1.4-2
++ Revision: 674553
+- fix  configuration file location
+
+* Mon Feb 28 2011 Lonyai Gergely <aleph@mandriva.org> 2.1.4-1
++ Revision: 641049
+- 2.1.4
+
+* Fri Nov 19 2010 Lonyai Gergely <aleph@mandriva.org> 2.1.3-1mdv2011.0
++ Revision: 599045
+- 2.1.3
+
+* Tue Apr 20 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.1.1-1mdv2010.1
++ Revision: 536971
+- new version
+- install plugins as data, not configuration
+- install binary under %%{_bindir}, as root usage is not mandatory
+- use standard exec permissions
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.35-5mdv2010.0
++ Revision: 430173
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 1.35-4mdv2009.0
++ Revision: 253954
+- rebuild
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 1.35-2mdv2008.1
++ Revision: 136631
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Dec 01 2006 Oden Eriksson <oeriksson@mandriva.com> 1.35-2mdv2007.0
++ Revision: 89746
+- Import nikto
+
+* Sun Nov 20 2005 Oden Eriksson <oeriksson@mandriva.com> 1.35-2mdk
+- added a softlink to make nikto -update work
+
+* Wed Nov 16 2005 Oden Eriksson <oeriksson@mandriva.com> 1.35-1mdk
+- initial Mandriva package
+
