@@ -1,0 +1,12 @@
+diff -p -up ./docs/nikto.1.tv ./docs/nikto.1
+--- ./docs/nikto.1.tv	2012-10-17 17:07:52.535433999 +0200
++++ ./docs/nikto.1	2012-10-17 17:07:57.307795828 +0200
+@@ -14,7 +14,7 @@
+ nikto \- Scan web server for known vulnerabilities
+ .SH "SYNOPSIS"
+ .HP 21
+-\fB/usr/local/bin/nikto\fR [options...]
++\fB/usr/bin/nikto\fR [options...]
+ .SH "DESCRIPTION"
+ .PP
+ Examine a web server to find potential problems and security vulnerabilities, including:
