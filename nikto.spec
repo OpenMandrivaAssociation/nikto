@@ -6,7 +6,7 @@ Version:	2.1.5
 Release:	2
 License:	GPLv2+
 Group:		Monitoring
-Url:		http://www.cirt.net/code/nikto.shtml
+Url:		https://www.cirt.net/code/nikto.shtml
 Source0:	http://www.cirt.net/nikto/%{name}-%{version}.tar.bz2
 Patch0:		nikto-2.1.5-fhs.patch
 Patch1:		nikto-2.1.5-fix-path-in-man.diff
