@@ -1,15 +1,23 @@
-diff -Naur -x '*~' -x '*.orig' -x '*.rej' nikto-2.1.5/nikto.conf nikto-2.1.5-fhs/nikto.conf
---- nikto-2.1.5/nikto.conf	2012-08-21 23:58:40.000000000 +0200
-+++ nikto-2.1.5-fhs/nikto.conf	2012-10-16 13:12:03.539964564 +0200
-@@ -61,11 +61,11 @@
- CHECKMETHODS=HEAD GET
+diff -up nikto-2.5.0/program/nikto.conf.default.1~ nikto-2.5.0/program/nikto.conf.default
+--- nikto-2.5.0/program/nikto.conf.default.1~	2025-02-15 23:13:33.622901392 +0100
++++ nikto-2.5.0/program/nikto.conf.default	2025-02-15 23:14:39.576265814 +0100
+@@ -56,10 +56,10 @@ CIRT=107.170.99.251
  
- # If you want to specify the location of any of the files, specify them here
--# EXECDIR=/opt/nikto				# Location of Nikto
--# PLUGINDIR=/opt/nikto/plugins			# Location of plugin dir
--# DBDIR=/opt/nikto/databases			# Location of plugin dir
--# TEMPLATEDIR=/opt/nikto/templates		# Location of tempmlate dir
--# DOCDIR=/opt/nikto/docs			# Location of docs dir
+ # Cookies: send cookies with all requests
+ # Multiple can be set by separating with a semi-colon, e.g.:
+-# "cookie1=cookie value";"cookie2=cookie val" 
++# "cookie1=cookie value";"cookie2=cookie val"
+ #STATIC-COOKIE="name=value";"something=nothing";
+ 
+-# The below allows you to vary which HTTP methods are used to check whether an HTTP(s) server 
++# The below allows you to vary which HTTP methods are used to check whether an HTTP(s) server
+ # is running. Some web servers, such as the autopsy web server do not implement the HEAD method
+ CHECKMETHODS=GET
+ 
+@@ -69,17 +69,22 @@ CHECKMETHODS=GET
+ # DBDIR=/opt/nikto/databases            # Location of database dir
+ # TEMPLATEDIR=/opt/nikto/templates      # Location of template dir
+ # DOCDIR=/opt/nikto/docs                # Location of docs dir
 +EXECDIR=/usr/bin
 +PLUGINDIR=/usr/share/nikto/plugins
 +DBDIR=/usr/share/nikto/databases
@@ -17,4 +25,20 @@ diff -Naur -x '*~' -x '*.orig' -x '*.rej' nikto-2.1.5/nikto.conf nikto-2.1.5-fhs
 +DOCDIR=/usr/share/doc
  
  # Default plugin macros
- @@MUTATE=dictionary;subdomain
+ # Remove plugins designed to be run standalone
+ @@EXTRAS=dictionary;siebel;embedded
+ @@DEFAULT=@@ALL;-@@EXTRAS;tests(report:500)
+ 
+-# Choose SSL libs: 
+-# SSLeay        - use Net::SSLeay 
+-# SSL           - use Net::SSL 
+-# auto          - automatically choose what's available 
+-#                 (SSLeay wins if both are available) 
++# Choose SSL libs:
++# SSLeay        - use Net::SSLeay
++# SSL           - use Net::SSL
++# auto          - automatically choose what's available
++#                 (SSLeay wins if both are available)
+ LW_SSL_ENGINE=auto
+ 
+ # Number of failures before giving up

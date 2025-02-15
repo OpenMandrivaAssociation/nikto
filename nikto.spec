@@ -2,14 +2,13 @@
 
 Summary:	Web Server and CGI Scanner
 Name:		nikto
-Version:	2.1.5
-Release:	2
+Version:	2.5.0
+Release:	1
 License:	GPLv2+
 Group:		Monitoring
-Url:		https://www.cirt.net/code/nikto.shtml
-Source0:	http://www.cirt.net/nikto/%{name}-%{version}.tar.bz2
+Url:		https://github.com/sullo/nikto
+Source0:	https://github.com/sullo/nikto/archive/refs/tags/%{version}.tar.gz
 Patch0:		nikto-2.1.5-fhs.patch
-Patch1:		nikto-2.1.5-fix-path-in-man.diff
 BuildArch:	noarch
 
 %description
@@ -20,7 +19,6 @@ files/CGIs, versions on over 625 servers, and version specific problems on over
 automatically updated (if desired).
 
 %files
-%doc docs/CHANGES.txt docs/LICENSE.txt docs/nikto_manual.html docs/nikto.dtd
 %config(noreplace) %{_sysconfdir}/nikto.conf
 %{_datadir}/nikto
 %{_bindir}/nikto
@@ -29,23 +27,21 @@ automatically updated (if desired).
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 
 %install
 install -d -m 755 %{buildroot}%{_bindir}
-install -m0755 nikto.pl %{buildroot}%{_bindir}/nikto
+install -m0755 program/nikto.pl %{buildroot}%{_bindir}/nikto
 
 install -d -m 755 %{buildroot}%{_sysconfdir}
-install -m0644 nikto.conf %{buildroot}%{_sysconfdir}
+install -m0644 program/nikto.conf.default %{buildroot}%{_sysconfdir}/nikto.conf
 
 install -d -m 755 %{buildroot}%{_datadir}/nikto
-cp -pr plugins %{buildroot}%{_datadir}/nikto
-cp -pr templates %{buildroot}%{_datadir}/nikto
-cp -pr databases %{buildroot}%{_datadir}/nikto
+cp -pr program/plugins %{buildroot}%{_datadir}/nikto
+cp -pr program/templates %{buildroot}%{_datadir}/nikto
+cp -pr program/databases %{buildroot}%{_datadir}/nikto
 
 install -d %{buildroot}%{_mandir}/man1
-install -m0644 docs/nikto.1 %{buildroot}%{_mandir}/man1
-
+install -m0644 documentation/nikto.1 %{buildroot}%{_mandir}/man1
